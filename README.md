@@ -5,11 +5,39 @@ suckless terminal but modern
 ## Overview
 This is a custom build of the [suckless terminal (st)](https://st.suckless.org/) with a modern touch. It aims to provide a clean, fast, and lightweight terminal experience.
 
-## Features
-Based on the repository contents, this build includes:
-- **Sixel graphics support** (`sixel.c`, `sixel.h`, `sixel_hls.c`, `sixel_hls.h`) - for displaying images directly in the terminal
-- **HarfBuzz text shaping** (`hb.c`) - for improved font rendering and complex script support
-- Standard suckless terminal functionality with a modern configuration
+## Patches
+- alpha
+- anygeometry
+- anysize
+- blinking_cursor
+- bold_is_not_bright
+- boxdraw
+- clipboard
+- columns
+- copyurl
+- copyurl_highlight_selected_urls
+- csi_22_23
+- drag_and_drop
+- dynamic_padding_patch
+- externalpipe
+- externalpipein
+- fixkeyboardinput
+- font2
+- keyboardselect
+- opencopied
+- open_selected_text
+- openurl_on_click
+- reflow
+- relativeborder
+- selection_colors
+- selectionbg_alpha
+- sixel
+- sync
+- vertcenter
+- wide_glyphs
+- workingdir
+- xresources
+- xresources_reload
 
 ## Installation
 ```bash
@@ -18,20 +46,11 @@ cd st-terminal
 sudo make clean install
 ```
 
-## Configuration
-Edit `config.h` before compilation to customize:
-- Fonts
-- Colorschemes
-- Keyboard shortcuts
-- Terminal behavior
-
-For persistent changes, modify `config.def.h` and recompile.
-
 ## Requirements
-- Xlib headers
+- Xlib
 - Fontconfig
-- HarfBuzz development libraries
-- (Optional) libsixel for advanced sixel support
+- HarfBuzz
+- (Optional) libsixel
 
 On Debian/Ubuntu:
 ```bash
