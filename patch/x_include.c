@@ -1,0 +1,11 @@
+/* Patches */
+#include "alpha.c"
+#include "boxdraw.c"
+#include "drag-n-drop.c"
+#include "opencopied.c"
+#include "fixkeyboardinput.c"
+#include "font2.c"
+#include "keyboardselect_reflow_x.c"
+#include "openselectedtext.c"
+#include "openurlonclick.c"
+#include "xresources.c"
