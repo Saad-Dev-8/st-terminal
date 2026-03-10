@@ -1,6 +1,6 @@
 # st-terminal
 
-suckless terminal but morden
+suckless terminal but modern
 
 ## Overview
 This is a custom build of the [suckless terminal (st)](https://st.suckless.org/) with a modern touch. It aims to provide a clean, fast, and lightweight terminal experience.
