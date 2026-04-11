@@ -1484,7 +1484,6 @@ csihandle(void)
 			}
 			/* vte does this:
 			tscrollup(0, term.row-1, term.row, SCROLL_SAVEHIST); */
-			/* alacritty does this: */
 			for (n = term.row-1; n >= 0 && tlinelen(term.line[n]) == 0; n--)
 				;
 			for (im = term.images; im; im = im->next)
@@ -1507,7 +1506,7 @@ csihandle(void)
 					delete_image(im);
 			}
 			break;
-		case 6: /* sixels */
+        case 6: /* sixels */
 			tdeleteimages();
 			tfulldirt();
 			break;
@@ -2659,7 +2658,6 @@ draw(void)
 	if (!xstartdraw())
 		return;
 
-	/* adjust cursor position */
 	LIMIT(term.ocx, 0, term.col-1);
 	LIMIT(term.ocy, 0, term.row-1);
 	if (term.line[term.ocy][term.ocx].mode & ATTR_WDUMMY)
@@ -2669,9 +2667,10 @@ draw(void)
 
 	drawregion(0, 0, term.col, term.row);
 
-	if (!kbds_drawcursor())
-	xdrawcursor(cx, term.c.y, term.line[term.c.y][cx],
-			term.ocx, term.ocy, term.line[term.ocy][term.ocx]);
+	if (!kbds_drawcursor()) {
+		xdrawcursor(cx, term.c.y, term.line[term.c.y][cx],
+				term.ocx, term.ocy, term.line[term.ocy][term.ocx]);
+	}
 	term.ocx = cx;
 	term.ocy = term.c.y;
 	xfinishdraw();
