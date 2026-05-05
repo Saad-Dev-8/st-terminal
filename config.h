@@ -8,13 +8,14 @@
 static char *font = "MesloLGS Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
+    "Noto Color Emoji:pixelsize=12:antialias=true:autohint=true",
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 
 /* borderperc: percentage of cell width to use as a border
  *             0 = no border, 100 = border width is same as cell width */
-int borderperc = 80;
+int borderperc = 100;
 
 /* modkey options: ControlMask, ShiftMask or XK_ANY_MOD */
 static uint url_opener_modkey = XK_ANY_MOD;
@@ -99,7 +100,7 @@ static unsigned int cursorthickness = 2;
  * 0: disable (render all U25XX glyphs normally from the font).
  */
 const int boxdraw = 1;
-const int boxdraw_bold = 0;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 0;
@@ -324,7 +325,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           clippaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,         {.i =  0} },
-	{ MODKEY,               XK_l,           copyurl,         {.i =  0} },
+	{ MODKEY|ShiftMask,     XK_l,           copyurl,         {.i =  0} },
 	{ MODKEY,               XK_o,           opencopied,      {.v = "xdg-open"} },
 	{ TERMMOD,              XK_U,           externalpipe,    { .v = openurlcmd } },
 	{ TERMMOD,              XK_M,           externalpipein,  { .v = setbgcolorcmd } },
