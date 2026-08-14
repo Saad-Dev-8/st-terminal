@@ -552,7 +552,7 @@ selnotify(XEvent *e)
 		}
 
 		if (IS_SET(MODE_KBDSELECT) && kbds_issearchmode()) {
-			kbds_pasteintosearch(data, nitems * format / 8, append++);
+			kbds_pasteintosearch((const char *)data, nitems * format / 8, append++);
 		} else {
 			/*
 			 * As seen in getsel:
@@ -1317,7 +1317,7 @@ xinit(int cols, int rows)
 	xw.XtextPlain = XInternAtom((Display*) xw.dpy, "text/plain", 0);
 	xw.XdndAware = XInternAtom(xw.dpy, "XdndAware", 0);
 	XChangeProperty(xw.dpy, xw.win, xw.XdndAware, 4, 32, PropModeReplace,
-			&XdndVersion, 1);
+			(unsigned char *)&XdndVersion, 1);
 
 	win.mode = MODE_NUMLOCK;
 	resettitle();

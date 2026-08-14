@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "MesloLGS Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "MesloLGS Nerd Font Mono:size=10:style=Medium:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
     "Noto Color Emoji:pixelsize=12:antialias=true:autohint=true",
@@ -231,7 +231,7 @@ static unsigned int mousebg = 0;
  * Color used to display font attributes when fontconfig selected a font which
  * doesn't match the ones requested.
  */
-static unsigned int defaultattr = 11;
+static unsigned int defaultattr = 9;
 
 /*
  * Xresources preferences to load at startup
